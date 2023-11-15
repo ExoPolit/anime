@@ -46,7 +46,7 @@ function showFullSynopsis(synopsis) {
     const animeCard = document.createElement("div");
     animeCard.innerHTML = `
       
-    <p><b>Title:</b> ${anime.title}</p> 
+    <p> ${anime.title}</p> 
       <img src="${imageUrl.jpg.image_url}" alt="Anime Image"></img>
       <p class="local-name"><b>Local Name:</b> ${anime.title_japanese} <p>
       <p class="synopsis"><b>Synopsis:</b> ${truncateSynopsis(anime.synopsis)}</p>
