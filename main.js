@@ -23,7 +23,7 @@ function truncateSynopsis(synopsis) {
 if(!synopsis){
   return '';
 }
-  const sentences = synopsis.split('.').slice(0, 2);
+  const sentences = synopsis.split('.').slice(0, 5);
   return sentences.join('.') + '.';
 }
 function showFullSynopsis(synopsis) {
