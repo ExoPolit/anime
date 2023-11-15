@@ -48,8 +48,8 @@ function showFullSynopsis(synopsis) {
       
     <p><b>Title:</b> ${anime.title}</p> 
       <img src="${imageUrl.jpg.image_url}" alt="Anime Image"></img>
-      <p><b>Local Name:</b> ${anime.title_japanese} <p>
-      <p><b>Synopsis:</b> ${truncateSynopsis(anime.synopsis)}</p>
+      <p class="local-name"><b>Local Name:</b> ${anime.title_japanese} <p>
+      <p class="synopsis"><b>Synopsis:</b> ${truncateSynopsis(anime.synopsis)}</p>
       <button class="info-button" onclick="showFullSynopsis('${anime.synopsis}')" style="cursor: no-drop">Show More</button>
       <p><b>Type:</b> ${anime.type}</p>
       <p><b>Total Episodes:</b> ${anime.episodes}</p>
@@ -77,4 +77,14 @@ function handleKeyPress(event) {
     event.preventDefault();
     getAnimeData();
   }
+}
+
+
+// Hambuger
+function openMenu() {
+  document.body.classList += " menu--open"
+}
+
+function closeMenu() {
+  document.body.classList.remove ('menu--open')
 }

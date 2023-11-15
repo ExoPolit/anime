@@ -1,37 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/main.js" defer></script>
-    <link rel="stylesheet" href="main.css">
-    <title>Document</title>
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="main.css" />
+    <title>AnimeHub</title>
+  </head>
+  <body>
     <header id="landing">
       <div class="container">
         <div class="row">
           <div class="header_wrapper">
-            <figure class="logo__wrapper ">
-
+            <figure class="logo__wrapper">
               <img src="./img/logo.png" class="logo" alt="" />
-              <h1>MoviePot</h1>
-
+              <h1>AnimeHub</h1>
             </figure>
 
             <div class="nav__wrapper">
               <nav>
-                <ul>
+                <ul class="nav__list">
                   <li>
                     <a href="#anime" class="link__hover-effect">Animes</a>
                   </li>
                   <li>
-                    <a href="#movies" class="link__hover-effect link__" style="cursor: no-drop;">Movies</a>
+                    <a
+                      href="#movies"
+                      class="link__hover-effect link__"
+                      style="cursor: no-drop"
+                      >Movies</a
+                    >
                   </li>
                   <li>
-                    <a href="#sitcoms" class="link__hover-effect link__series" style="cursor: no-drop;">Series</a>
+                    <a
+                      href="#contact"
+                      class="link__hover-effect link__series"
+                      style="cursor: no-drop"
+                      >Contact</a
+                    >
                   </li>
                 </ul>
+
+                <button class="btn__menu" onclick="openMenu()">
+                  <i class="fas fa-bars"></i>
+                </button>
+                <div class="menu__backdrop">
+                  <button
+                    class="btn__menu btn__menu--close"
+                    onclick="closeMenu()"
+                  >
+                    <i class="fas fa-times"></i>
+                  </button>
+                  <ul class="menu__links">
+                     <li class="menu__list">
+                      <a href="#anime" class="menu__link" onclick="closeMenu()"
+                        >Anime</a
+                      >
+                    </li>
+                    <li class="menu__list">
+                      <a
+                        href="#movies"
+                        class="menu__link"
+                        onclick="closeMenu()"
+                        >Movies</a
+                      >
+                    </li>
+                    <li class="menu__list">
+                      <a
+                        href="#contact"
+                        class="menu__link"
+                        onclick="closeMenu(), toggleModal()"
+                        >Contact</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </nav>
             </div>
           </div>
@@ -39,26 +86,37 @@
       </div>
     </header>
     <main>
-
-      <div class="searchbar__wrapper" >
-              <form class="searchbar">
-                <input autocomplete="off" type="text" placeholder="Search" id="anime-name" name="anime-name" onkeypress="handleKeyPress(event)" >
-                <br> 
-                <p></p>
-                <button type="button" onclick="getAnimeData()">Submit</button>
-              </form>
+      <p class="search_para-top">Search your Favorite Anime!</p>
+      <div class="searchbar__wrapper">
+        
+        <form class="searchbar">
+          <input
+            autocomplete="off"
+            type="text"
+            placeholder="Search"
+            id="anime-name"
+            name="anime-name"
+            onkeypress="handleKeyPress(event)"
+          />
+          <br />
+          <p></p>
+          <button type="button" onclick="getAnimeData()">Submit</button>
+        </form>
       </div>
-
 
       <section id="anime">
         <div class="container">
-              <figure class="anime__img">
-                <img src="./img/Naruto_seal.svg" class="anime__logo spin__effect" alt="">
-                <h2>Anime</h2>
-              </figure>
-              <div class="anime__list">
-                <div id="anime-data"></div>
-            </div>
+          <figure class="anime__img">
+            <img
+              src="./img/Naruto_seal.svg"
+              class="anime__logo spin__effect"
+              alt=""
+            />
+            <h2>Anime</h2>
+          </figure>
+          <div class="anime__list">
+            <div id="anime-data"></div>
+          </div>
         </div>
       </section>
     </main>
@@ -68,22 +126,38 @@
         <div class="copyright">
           <figure class="logo__wrapper card">
             <img src="./img/logo.png" class="logo" alt="" />
-            <h1>MoviePot</h1>
+            <h1>AnimeHub</h1>
             <span class="top"></span>
             <span class="right"></span>
             <span class="bottom"></span>
             <span class="left"></span>
           </figure>
           <div class="footer__links--container">
-          <ul class="footer__links">
-            <li><a href="#movies" class="link__hover-effect footer__list" style="cursor: no-drop;">Movies</a></li>
-            <li><a href="#anime" class="link__hover-effect footer__list">Animes</a></li>
-            <li><a href="#sitcoms" class="link__hover-effect footer__list" style="cursor: no-drop;">Series</a></li>
-            <a href="#landing" class="arrow arrow__rotate"><i class="fas fa-arrow-up"></i></a>
-          </ul>
-          
-        </div>
-        
+            <ul class="footer__links">
+              <li>
+                <a href="#anime" class="link__hover-effect footer__list"
+                  >Animes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#movies"
+                  class="link__hover-effect footer__list"
+                  style="cursor: no-drop"
+                  >Movies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="link__hover-effect footer__list"
+                  style="cursor: no-drop"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
           <p>Copyright 2023 ©Kaan Özkan</p>
         </div>
       </div>
