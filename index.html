@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/main.js" defer></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header id="landing">
+      <div class="container">
+        <div class="row">
+          <div class="header_wrapper">
+            <figure class="logo__wrapper ">
+
+              <img src="./img/logo.png" class="logo" alt="" />
+              <h1>MoviePot</h1>
+
+            </figure>
+
+            <div class="nav__wrapper">
+              <nav>
+                <ul>
+                  <li>
+                    <a href="#anime" class="link__hover-effect">Animes</a>
+                  </li>
+                  <li>
+                    <a href="#movies" class="link__hover-effect link__" style="cursor: no-drop;">Movies</a>
+                  </li>
+                  <li>
+                    <a href="#sitcoms" class="link__hover-effect link__series" style="cursor: no-drop;">Series</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+
+      <div class="searchbar__wrapper" >
+              <form class="searchbar">
+                <input autocomplete="off" type="text" placeholder="Search" id="anime-name" name="anime-name" onkeypress="handleKeyPress(event)" >
+                <br> 
+                <p></p>
+                <button type="button" onclick="getAnimeData()">Submit</button>
+              </form>
+      </div>
+
+
+      <section id="anime">
+        <div class="container">
+          <div class="row">
+            <div class="anime">
+              <figure class="anime__img">
+                <img src="./img/Naruto_seal.svg" class="anime__logo spin__effect" alt="">
+                <h2>Anime</h2>
+              </figure>
+              <div class="anime__list">
+                <div id="anime-data"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer__container">
+        <div class="copyright">
+          <figure class="logo__wrapper card">
+            <img src="./img/logo.png" class="logo" alt="" />
+            <h1>MoviePot</h1>
+            <span class="top"></span>
+            <span class="right"></span>
+            <span class="bottom"></span>
+            <span class="left"></span>
+          </figure>
+          <div class="footer__links--container">
+          <ul class="footer__links">
+            <li><a href="#movies" class="link__hover-effect footer__list" style="cursor: no-drop;">Movies</a></li>
+            <li><a href="#anime" class="link__hover-effect footer__list">Animes</a></li>
+            <li><a href="#sitcoms" class="link__hover-effect footer__list" style="cursor: no-drop;">Series</a></li>
+            <a href="#landing" class="arrow arrow__rotate"><i class="fas fa-arrow-up"></i></a>
+          </ul>
+          
+        </div>
+        
+          <p>Copyright 2023 ©Kaan Özkan</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
