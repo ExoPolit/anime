@@ -26,11 +26,18 @@ if(!synopsis){
   const sentences = synopsis.split('.').slice(0, 5);
   return sentences.join('.') + '.';
 }
+
+/*
+
+// disabled function
+
 function showFullSynopsis(synopsis) {
   const synonpsisDiv = document.createElement("div");
   synonpsisDiv.innerHTML = `<p>${synopsis}</p>`;
   document.body.appendChild(synonpsisDiv)
 }
+
+*/
 
   // Build in HTML
   result.data.forEach((item) => {
