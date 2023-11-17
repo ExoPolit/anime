@@ -23,7 +23,7 @@ function truncateSynopsis(synopsis) {
 if(!synopsis){
   return '';
 }
-  const sentences = synopsis.split('.').slice(0, 3);
+  const sentences = synopsis.split('.').slice(0,2);
   return sentences.join('.') + '.';
 }
 
@@ -46,10 +46,10 @@ function showFullSynopsis(synopsis) {
     const animeCard = document.createElement("div");
     animeCard.innerHTML = `
       
-    <p> ${anime.title}</p> 
+    <p class="anime-title"> ${anime.title}</p> 
       <img src="${imageUrl.jpg.image_url}" alt="Anime Image"></img>
       <p class="local-name"><b>Local Name:</b> ${anime.title_japanese} <p>
-      <p class="synopsis"><b>Synopsis:</b> ${truncateSynopsis(anime.synopsis)}</p>
+      <p class="synopsis">${truncateSynopsis(anime.synopsis)}</p>
       <button class="info-button" onclick="showFullSynopsis('${anime.synopsis}')" style="cursor: no-drop">Show More</button>
       <p><b>Type:</b> ${anime.type}</p>
       <p><b>Total Episodes:</b> ${anime.episodes}</p>
