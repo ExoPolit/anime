@@ -25,16 +25,9 @@
               <nav>
                 <ul class="nav__list">
                   <li>
-                    <a href="#anime" class="link__hover-effect">Animes</a>
+                    <a href="#anime" class="link__hover-effect" onclick="mostFeatured()">Animes</a>
                   </li>
-                  <li>
-                    <a
-                      href="#movies"
-                      class="link__hover-effect link__"
-                      style="cursor: no-drop"
-                      >Movies</a
-                    >
-                  </li>
+
                   <li>
                     <a
                       href="#contact"
@@ -56,17 +49,9 @@
                     <i class="fas fa-times"></i>
                   </button>
                   <ul class="menu__links">
-                     <li class="menu__list">
-                      <a href="#anime" class="menu__link" onclick="closeMenu()"
-                        >Anime</a
-                      >
-                    </li>
                     <li class="menu__list">
-                      <a
-                        href="#movies"
-                        class="menu__link"
-                        onclick="closeMenu()"
-                        >Movies</a
+                      <a href="#anime" class="menu__link" onclick="closeMenu(), mostFeatured()" 
+                        >Anime</a
                       >
                     </li>
                     <li class="menu__list">
@@ -88,8 +73,7 @@
     <main>
       <p class="search_para-top">Search your Favorite Anime!</p>
       <div class="searchbar__wrapper">
-        
-        <form class="searchbar">
+        <form id="anime-form" class="searchbar">
           <input
             autocomplete="off"
             type="text"
@@ -102,27 +86,23 @@
           <p></p>
           <button type="button" onclick="getAnimeData()">Submit</button>
         </form>
+        <div class="filter">
+          <label for="filterType">Filter: </label>
+          <select id="filterType">
+            <option value="all">Most Featured</option>
+            <option value="tv">Series(Tv)</option>
+            <option value="movie">Movies</option>
+          </select>
+        </div>
       </div>
 
       <section id="anime">
         <div class="container">
           <div class="anime__wrapper">
-          <span class="anime__img--para-top">
-          <p class="anime__img-para">Hover Img to see Magic!</p>
-          <i class="fas fa-arrow-down arrow__down"></i>
-        </span>
-          <figure class="anime__img">
-            <img
-              src="./img/Naruto_seal.svg"
-              class="anime__logo spin__effect"
-              alt=""
-            />
-            <h2>Anime</h2>
-          </figure>
-          <div class="anime__list">
-            <div id="anime-data"></div>
+            <div class="anime__list">
+              <div id="anime-data"></div>
+            </div>
           </div>
-        </div>
         </div>
       </section>
     </main>
@@ -131,7 +111,7 @@
       <div class="footer__container">
         <div class="copyright">
           <figure class="logo__wrapper card footer__logo-wrapper">
-            <img src="./img/logo.png" class="logo" alt="" />
+            <img src="./img/logo.png" class="logo footer__logo" alt="" />
             <h1>AnimeHub</h1>
             <span class="top"></span>
             <span class="right"></span>
@@ -141,18 +121,11 @@
           <div class="footer__links--container">
             <ul class="footer__links">
               <li>
-                <a href="#anime" class="link__hover-effect footer__list"
+                <a href="#anime" class="link__hover-effect footer__list" onclick="mostFeatured()"
                   >Animes</a
                 >
               </li>
-              <li>
-                <a
-                  href="#movies"
-                  class="link__hover-effect footer__list"
-                  style="cursor: no-drop"
-                  >Movies</a
-                >
-              </li>
+
               <li>
                 <a
                   href="#contact"

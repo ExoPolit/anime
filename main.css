@@ -81,11 +81,11 @@ header {
   width: 4rem;
 }
 .logo__wrapper {
+  margin: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 /* header // nav */
 
@@ -173,23 +173,37 @@ nav a {
 }
 
 /* searchbar */
+.searchbar__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
 .search_para-top {
   margin: 12px 0 0 0;
   font-size: 24px;
 }
 .searchbar {
-  margin-top: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
 }
 .searchbar input,
-.searchbar button {
-  padding: 8px;
-  font-size: 24px;
+.searchbar button,
+.filter,
+#filterType {
+  padding: 10px;
+  font-size: var(--font-size-large);
   border-radius: 12px;
   border: none;
+}
+
+.filter {
+  justify-content: center;
+  padding: 24px;
+  color: #fff;
 }
 
 /* API  Style */
@@ -198,19 +212,21 @@ nav a {
 .synopsis {
   margin: 8px 0;
   font-size: var(--font-size-large);
+  font-weight: 700;
   text-align: center;
   color: var(--color-light-black);
 }
 .local-name,
 .synopsis {
   font-size: var(--font-size-medium);
+  font-weight: 400;
 }
 .local-name {
   color: var(--color-light-dark-red);
 }
 .info-button {
   margin: 0.6rem 0;
-  padding: 4px;
+  padding: 8px;
   border: none;
   border-radius: 3px;
   transition: all 550ms ease;
@@ -220,7 +236,18 @@ nav a {
   transform: scale(1.1);
   opacity: 0.2;
 }
-
+#info-Text {
+  display: none;
+  position: absolute;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0 0 0 0.1);
+}
+#interactive-Button:hover + #info-Text {
+  display: block;
+}
 
 /* ANIME */
 
@@ -235,11 +262,10 @@ nav a {
 }
 
 .anime-card {
- 
   overflow: hidden;
   flex: 0 0 calc(50% - 20px);
   max-width: 350px;
-  margin: 20px;
+  margin: 20px 0;
   padding: 15px;
   border-radius: 12px;
   text-align: center;
@@ -252,10 +278,8 @@ nav a {
   cursor: pointer;
 }
 
-
-
 .anime-card img {
-  max-width: 300px;
+  max-width: 100%;
   max-height: 400px;
   border-radius: 12px;
 }
@@ -268,29 +292,6 @@ nav a {
   display: block;
 }
 
-.anime__img {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.anime__img h2 {
-  margin-left: 0.42em;
-}
-.anime__img--para-top {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  top: 33rem;
-  left: 15.2rem;
-  font-size: var(--font-size-small);
-  opacity: 0;
-}
-.anime__img-para {
-  font-size: var(--font-size-medium);
-}
 .arrow__down {
   color: white;
 }
@@ -359,7 +360,6 @@ footer .logo {
   color: #fff;
   background: transparent;
   overflow: hidden;
-  font-family: sans-serif;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -525,7 +525,78 @@ span {
 /* BORDE ANIMATION END */
 
 /* Smartphone*/
-@media screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
+  header {
+    
+    min-height: 275px;
+  }
+  .header_wrapper h1 {
+    font-size: 24px;
+  }
+  .logo__wrapper {
+    margin: 12px 4px;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .btn__menu {
+    margin: 16px 4px;
+    display: block;
+    color: #f94d49;
+    top: 0;
+    left: 0;
+    right: -25rem;
+    font-size: 36px;
+  }
+  .btn__menu--close {
+    
+    right: -25rem;
+    top: 10px;
+    padding: 8px;
+    color: white;
+  }
+
+  .searchbar__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+  .searchbar input,
+  .searchbar button,
+  #filterType {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  #anime-data {
+    display: block;
+  }
+  .anime-card {
+    border-radius: 12px;
+  }
+
+  .anime-card img {
+    padding: 8px;
+  }
+
+  .info-button,
+  .local-name {
+    display: none;
+  }
+  .footer__container {
+    font-size: 16px;
+  }
+  .footer__logo-wrapper h1 {
+    font-size: 28px;
+  }
+}
+
+/* Small Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
   header {
     width: 100%;
     min-height: 275px;
@@ -536,9 +607,7 @@ span {
   .logo__wrapper {
     margin: 12px 4px;
   }
-  .logo {
-    width: 2.6rem;
-  }
+
   .nav__list {
     display: none;
   }
@@ -550,12 +619,13 @@ span {
     position: absolute;
     top: 0;
     left: 0;
-    right: -25rem;
+    right: -35rem;
     font-size: 36px;
+    overflow-y: hidden;
   }
   .btn__menu--close {
     position: absolute;
-    right: -25rem;
+    right: -35rem;
     top: 10px;
     padding: 8px;
     color: white;
@@ -563,81 +633,41 @@ span {
 
   .searchbar__wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: 0;
   }
   .searchbar input,
-  .searchbar button {
+  .searchbar button,
+  #filterType {
+    padding: 12px;
     font-size: 16px;
-  }
-  .anime__img {
-    margin-left: -1rem;
-  }
-#anime-data{
- display: block;
-}
-  .anime-card {
-    
-    border-radius: 12px;
-  }
-  .anime-title{
-    font-size: var(--font-size-small);
-  }
-  .anime-card img {
-    padding: 8px;
-    }
-  
-  
-  .info-button,
-  .local-name {
-    display: none;
-  }
-  .footer__container {
-    font-size: 16px;
-  }
-  .footer__logo-wrapper{
-    width: 100%;
-  }
-}
-
-/* Small Tablets */
-@media screen and (max-width: 768px) {
-  header {
-    min-height: 270px;
+    font-weight: 600;
   }
 
   .anime-card {
+   
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
     overflow: hidden;
-    transition: height 0.3s ease;
+    transition: height 1000ms ease;
+    
   }
-  
-  .anime-title {
-    margin: 8px 0;
-    font-size: 24px;
-    text-align: center;
-  }
-  
+
+ 
+
   .local-name {
     font-size: 18px;
   }
-  
+
   .synopsis {
     font-size: 16px;
   }
-  
+
   .info-button {
     cursor: no-drop;
   }
 }
 
-/* Desktops */
-
-@media screen and (min-width: 1024px) {
-  .anime__img--para-top {
-    opacity: 1;
-  }
-}
