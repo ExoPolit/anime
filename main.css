@@ -21,12 +21,14 @@ html {
   scroll-behavior: smooth;
 }
 .container {
+
   margin: 0 auto;
   padding: 0;
   width: 100%;
   max-width: 1280px;
 }
 body {
+  overflow-x: hidden;
   background: #242424;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
@@ -71,6 +73,7 @@ a:hover {
 }
 
 header {
+
   background-image: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg2.wikia.nocookie.net%2F__cb20130226005246%2Fhoradeaventura%2Fes%2Fimages%2Fd%2Fd6%2FCcca.jpg&f=1&nofb=1&ipt=b420c177946befb83d29d311a7db0a00e9059e54ee7f027d328617a5e482c476&ipo=images);
   background-size: cover;
   background-repeat: no-repeat;
@@ -526,6 +529,9 @@ span {
 
 /* Smartphone*/
 @media screen and (max-width: 480px) {
+  body{
+    overflow-x: hidden;
+  }
   header {
     
     min-height: 275px;
@@ -551,7 +557,7 @@ span {
     font-size: 36px;
   }
   .btn__menu--close {
-    
+    position: absolute;
     right: -25rem;
     top: 10px;
     padding: 8px;
