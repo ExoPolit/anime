@@ -5,7 +5,7 @@ document.getElementById("anime-form").addEventListener("submit", function(event)
   //Prevent default form submission
   event.preventDefault();
 
-  //Cann getAnimeData function
+  //Call getAnimeData function
   getAnimeData();
 })
 
