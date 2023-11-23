@@ -25,7 +25,7 @@ async function getAnimeData() {
   console.log(result); // Log entire API response
 
   // Sort by favorites (assuming favorites property exists in your data)
-  const mostFeatured = result.data.sort((a, b) => b.favorites - a.favorites);
+  result.data.sort((a, b) => b.favorites - a.favorites);
 
   // Clear existing content
   const animeDataDiv = document.getElementById("anime-data");
