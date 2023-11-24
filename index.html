@@ -16,16 +16,23 @@
       <div class="container">
         <div class="row">
           <div class="header_wrapper">
-            <figure class="logo__wrapper">
-              <img src="./img/logo.png" class="logo" alt="" />
-              <h1>AnimeHub</h1>
-            </figure>
+            <div class="figure__parent-relative">
+              <figure class="logo__wrapper logo__wrapper--top">
+                <img src="./img/logo.png" class="logo" alt="" />
+                <h1>AnimeHub</h1>
+              </figure>
+            </div>
 
             <div class="nav__wrapper">
               <nav>
                 <ul class="nav__list">
                   <li>
-                    <a href="#anime" class="link__hover-effect" onclick="mostFeatured()">Animes</a>
+                    <a
+                      href="#anime"
+                      class="link__hover-effect"
+                      onclick="mostFeatured()"
+                      >Animes</a
+                    >
                   </li>
 
                   <li>
@@ -50,7 +57,10 @@
                   </button>
                   <ul class="menu__links">
                     <li class="menu__list">
-                      <a href="#anime" class="menu__link" onclick="closeMenu(), mostFeatured()" 
+                      <a
+                        href="#anime"
+                        class="menu__link"
+                        onclick="closeMenu(), mostFeatured()"
                         >Anime</a
                       >
                     </li>
@@ -79,17 +89,19 @@
             type="text"
             placeholder="Search"
             id="anime-name"
+            class="anime-search"
             name="anime-name"
             onkeypress="handleKeyPress(event)"
           />
           <br />
           <p></p>
-          <button type="submit" onclick="getAnimeData(), mostFeatured()">Submit</button>
+          <button type="submit" onclick="getAnimeData(), mostFeatured()">
+            Submit
+          </button>
         </form>
         <div class="filter">
-          <label for="filterType">Filter: </label>
           <select id="filterType">
-            <option value="all">Most Featured</option>
+            <option value="all">All Animes</option>
             <option value="tv">Series(Tv)</option>
             <option value="movie">Movies</option>
           </select>
@@ -121,7 +133,10 @@
           <div class="footer__links--container">
             <ul class="footer__links">
               <li>
-                <a href="#anime" class="link__hover-effect footer__list" onclick="mostFeatured()"
+                <a
+                  href="#anime"
+                  class="link__hover-effect footer__list"
+                  onclick="mostFeatured()"
                   >Animes</a
                 >
               </li>
@@ -137,7 +152,7 @@
             </ul>
           </div>
 
-          <p>Copyright 2023 ©Kaan Özkan</p>
+          <p class="copyright--para">Copyright 2023 ©Kaan Özkan</p>
         </div>
       </div>
     </footer>
