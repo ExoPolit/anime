@@ -521,14 +521,15 @@ span {
   header {
     min-height: 275px;
   }
-  .figure__parent-relative{
-    position: relative;
-  }
+  
   .header_wrapper h1 {
     font-size: 24px;
   }
   .logo__wrapper {
     margin: 12px 4px;
+  }
+  .figure__parent-relative{
+    position: relative;
   }
  .logo__wrapper--top{
     position: absolute;
@@ -640,6 +641,14 @@ span {
   .logo__wrapper {
     margin: 12px 4px;
   }
+  .figure__parent-relative{
+    position: relative;
+  }
+ .logo__wrapper--top{
+    position: absolute;
+    top: 11rem;
+
+  }
 
   .nav__list {
     display: none;
@@ -664,7 +673,7 @@ span {
     color: white;
   }
   .menu__backdrop {
-    bottom: 35rem;
+    bottom: 0;
   }
 
   .searchbar__wrapper {
