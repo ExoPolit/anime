@@ -84,6 +84,7 @@ function showFullSynopsis(synopsis) {
       <p class="anime-type"><b>Total Episodes:</b> ${anime.episodes}</p>
     `;
         animeCard.classList.add("anime-card"); // Add a class for styling
+        animeCard.style.cursor = "no-drop"
         animeCard.style.marginTop = "20px"; // Add margin between anime cards
 
         animeCard.addEventListener("contextmenu", (event) => {
